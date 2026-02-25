@@ -42,14 +42,6 @@ public class ReunionService {
         }
     }
 
-    public void delete(Long id){
-        if (reuniones.containsKey(id)){
-            reuniones.remove(id);
-        } else {
-            throw new IllegalArgumentException("No existe la reunion id: " + id);
-        }
-    }
-
     public String getNombreSala(Long salaId){
         Optional<Sala> sala = salaService.getSala(salaId);
 

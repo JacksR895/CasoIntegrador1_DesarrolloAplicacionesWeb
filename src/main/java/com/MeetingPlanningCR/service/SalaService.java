@@ -32,13 +32,4 @@ public class SalaService {
         return sala;
     }
 
-    public void delete(Long id){
-        if(!salas.containsKey(id)){
-            throw new IllegalArgumentException("No existe la sala id: " + id);
-        }
-        salas.remove(id);
-    }
-
-
-
 }
