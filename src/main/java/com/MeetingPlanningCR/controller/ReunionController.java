@@ -32,9 +32,9 @@ public class ReunionController {
 
         List<Reunion> reunionesLista = reunionService.getReuniones();
 
-        model.addAttribute("reuniones", reunionesLista);
-        model.addAttribute("reunion",new Reunion());
-        model.addAttribute("salas", salaService.getSalas());
+        model.addAttribute("reuniones", reunionesLista); // genero al modelo las reuniones para tener el historico.
+        model.addAttribute("reunion",new Reunion());  // mando la posibilidad de generar nuevas reuniones
+        model.addAttribute("salas", salaService.getSalas()); // traigo las salas generadas para que puedan ser llamadas en caso de las reuiones.
         return "reunion/listado";
     }
 

@@ -1,7 +1,6 @@
 package com.MeetingPlanningCR.controller;
 
 import com.MeetingPlanningCR.domain.Sala;
-import com.MeetingPlanningCR.service.ReunionService;
 import com.MeetingPlanningCR.service.SalaService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -16,17 +15,15 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class SalaController {
 
     private final SalaService salaService;
-    private final ReunionService reunionService;
 
 
-    public SalaController(SalaService salaService, ReunionService reunionService) {
+    public SalaController(SalaService salaService) {
         this.salaService = salaService;
-        this.reunionService = reunionService;
     }
 
     @GetMapping("/listado")
     public String listado(Model model){
-        model.addAttribute("salas", salaService.getSalas());
+        model.addAttribute("salas", salaService.getSalas()); //igual mando al modelo todo los listados.
         model.addAttribute("sala",new Sala()); //para poder tambien crear una sala nueva.
         return "sala/listado";
     }
