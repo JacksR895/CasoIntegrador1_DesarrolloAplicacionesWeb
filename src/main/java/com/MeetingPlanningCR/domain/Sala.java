@@ -14,7 +14,7 @@ public class Sala {
     @Min(1)
     private int capacidad;
 
-    private Long getId() {
+    public Long getId() {
         return id;
     }
     public void setId(Long id) {
